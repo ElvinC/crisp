@@ -1,5 +1,5 @@
 # Camera-to-IMU calibration toolbox
-This toolbox provides a python library to perform joint calibration of a rolling shutter camera-gyroscope system.
+This toolbox provides a python library to perform joint calibration of a rolling shutter camera-gyroscope system. This fork contains a few small changes to fix deprecated function calls.
 
 Given gyroscope and video data, this library can find the following parameters
 
@@ -49,6 +49,11 @@ To build and install the `crisp` module just run the following commands:
     $ python setup.py install
     
 For a user-only installation add `--user` to the install command.
+
+Alternatively the package can be built using wheels.
+
+    & python setup.py sdist bdist_wheel
+    & pip install dist\crisp-<version>.whl
 
 ## Usage
 The gyroscope and video data are first loaded into a stream object (`GyroStream`, and a subclass of `VideoStream` respectively).
