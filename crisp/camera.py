@@ -172,6 +172,10 @@ class AtanCameraModel(CameraModel):
         """
         X = points if not points.ndim == 1 else points.reshape((points.size, 1))
 
+        if X.dtype != np.dtype('float'):
+            X = X.astype('float')
+
+
         wx, wy = self.wc
 
         # Switch to polar coordinates
@@ -200,6 +204,9 @@ class AtanCameraModel(CameraModel):
             Distorted points
         """
         X = points if not points.ndim == 1 else points.reshape((points.size, 1))
+
+        if X.dtype != np.dtype('float'):
+            X = X.astype('float')
 
         wx, wy = self.wc
 

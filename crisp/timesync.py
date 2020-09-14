@@ -22,7 +22,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.signal as ssig
 import scipy.optimize
-from matplotlib.mlab import normpdf
+# from matplotlib.mlab import normpdf # Deprecated
+from scipy.stats import norm
+# Alias
+normpdf = norm.pdf
+
+
 
 from . import tracking
 from .imu import IMU

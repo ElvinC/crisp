@@ -104,6 +104,9 @@ def rotation_matrix_to_axis_angle(R):
     --------------
     This uses the algorithm as described in Multiple View Geometry, p. 584
     """
+    if R.dtype != np.dtype('float'):
+        R = R.astype('float')
+
     assert R.shape == (3,3)
     assert_almost_equal(np.linalg.det(R), 1.0, err_msg="Not a rotation matrix: determinant was not 1")
     S, V = np.linalg.eig(R)
